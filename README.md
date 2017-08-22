@@ -1,0 +1,1 @@
+# Solutions to Codility Training Challenges
