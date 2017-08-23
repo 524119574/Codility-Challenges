@@ -41,3 +41,54 @@ function solution(N) {
     return counter;
 }
 ```
+## Peaks(Need further notice)
+
+A Harder Problem. 
+
+```javascript
+function solution(A) {
+    var storage = [], counter = 0;
+    // 1. So first I used a loop to find all the peaks and stored them all into an array called storage
+    for(var i = 1; i < A.length - 1; i++) {
+        if (A[i] > A[i-1] && A[i] > A[i+1]) {
+            storage.push(i);
+        }
+    }
+    // 2. Go and write the function canBeSeparatedInto
+    // 3. Use the for loop to check the counter
+    for(var j = 1; j < A.length; j++) {
+        if (canBeSeparatedInto(j, A, storage)) {
+            counter = j;
+        }
+    }
+    return counter;
+}
+
+/* this function basically tells you if it is possible to divide the given array into given parts
+ * we will be passing our function with parameters: 
+ * @param parts[number]: number of parts that we intend to divide the array into
+ * @param array[array]: the original array
+ * @param peaks[array]: an storage array that store all the index of the peaks
+ * @return [boolean]: true if the given array can be divided into given parts, false otherwise
+ */
+function canBeSeparatedInto(parts, array, peaks) {
+    var i = 1, result = false;
+    var blockSize = array.length / parts;
+    peaks.forEach(function(elem) {
+    // test to see if there is an element in the array belongs to the ith part
+        if ((elem+1)/blockSize <= i && (elem+1)/blockSize> i-1) {
+            i++;
+        }
+    });
+    // set the result to true if there are indeed peaks for every parts
+    if (i > parts) {
+        result = true;
+    }
+    return result;
+}
+
+```
+As you can see this is not the correct answer, I only get 45% in the codility, but I noted it down anyway.
+
+## Flags
+
