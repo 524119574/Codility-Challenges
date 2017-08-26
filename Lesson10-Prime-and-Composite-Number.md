@@ -2,7 +2,7 @@
 
 ## MinPrimeterRectangle
 
-Very easy, just simply loop through all the numbers less than or equal to the square root of the give area(N), since the length and width comes up in pairs and for the length/width smaller than square root of N, we will have its coresponding length/width bigger than square root of N. Sowe can simply loop throught every number from 1 to square root of N(if it is not integer we will take the ceiling value) which gives as the time compexity as question required. During the process we will calculate the perimeter only if N is divisible by `i` and compare it with our stored the `minPerim` value, and change its current value to `minPerim` if the current value is bigger than the previously stored one.
+Very easy, simply loop through all the numbers less than or equal to the square root of the give area(N), since the length and width comes up in pairs and for the length/width smaller than square root of N, we will have its coresponding length/width bigger than square root of N. Sowe can simply loop throught every number from 1 to square root of N(if it is not integer we will take the ceiling value) which gives as the time compexity as question required. During the process we will calculate the perimeter only if N is divisible by `i` and compare it with our stored the `minPerim` value, and change its current value to `minPerim` if the current value is bigger than the previously stored one.
 
 In essence it is sort of like the question of finding all the factors of a given integer.
 
